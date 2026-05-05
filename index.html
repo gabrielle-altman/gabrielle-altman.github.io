@@ -367,6 +367,25 @@ footer {
   letter-spacing: 0.05em;
 }
 
+.orcid-button {
+  font-family: var(--mono);
+  font-size: 11px;
+  padding: 6px 12px;
+  background: var(--accent-soft);
+  color: var(--accent);
+  border: 1px solid var(--accent);
+  border-radius: 3px;
+  display: inline-block;
+  transition: all 0.2s ease;
+  border-bottom: 1px solid var(--accent);
+  white-space: nowrap;
+}
+
+.orcid-button:hover {
+  background: var(--accent);
+  color: var(--bg-elev);
+}
+
 @keyframes fadeUp {
   from { opacity: 0; transform: translateY(12px); }
   to { opacity: 1; transform: translateY(0); }
@@ -594,7 +613,13 @@ footer {
   </section>
 
   <section>
-    <h2>Selected Publications</h2>
+    <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 28px;">
+      <h2 style="margin-bottom: 0;">Selected Publications</h2>
+      <a href="https://orcid.org/0000-0003-3556-1492" target="_blank" rel="noopener" class="orcid-button">
+        ORCID
+      </a>
+    </div>
+
 
     <div class="pub">
       <p class="pub-title">
