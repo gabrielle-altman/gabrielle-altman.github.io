@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Gabrielle Altman — Bioinformatics Data Scientist</title>
+<title>Gabrielle N. Altman</title>
 <meta name="description" content="Bioinformatics data scientist and PhD candidate specializing in biobank-scale statistical human genomics, tandem repeat expansions, and multiomic integration.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -93,7 +93,7 @@ header {
 h1 {
   font-family: var(--serif);
   font-weight: 500;
-  font-size: clamp(40px, 6vw, 60px);
+  font-size: clamp(30px, 6vw, 50px);
   line-height: 1.05;
   letter-spacing: -0.02em;
   margin-bottom: 24px;
@@ -146,7 +146,7 @@ section:nth-of-type(5) { animation-delay: 0.3s; }
 h2 {
   font-family: var(--mono);
   font-weight: 500;
-  font-size: 12px;
+  font-size: 18px;
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--accent);
@@ -156,7 +156,7 @@ h2 {
 h3 {
   font-family: var(--serif);
   font-weight: 500;
-  font-size: 22px;
+  font-size: 18px;
   line-height: 1.3;
   letter-spacing: -0.01em;
   margin-bottom: 8px;
@@ -337,7 +337,25 @@ p:last-child { margin-bottom: 0; }
   margin-left: 6px;
   vertical-align: middle;
 }
+.resume-link {
+  font-family: var(--mono);
+  font-size: 13px;
+  padding: 5px 5px;
+  background: var(--accent-soft);
+  color: var(--accent);
+  border: 1px solid var(--accent);
+  border-radius: 4px;
+  display: inline-block;
+  transition: all 0.2s ease;
+  border-bottom: 1px solid var(--accent);
+  margin-top: 16px;
+  margin-bottom: 0px;
+}
 
+.resume-link:hover {
+  background: var(--accent);
+  color: var(--bg-elev);
+}
 /* Footer */
 footer {
   padding: 48px 0 64px;
@@ -369,10 +387,9 @@ footer {
 
   <header>
     <div class="eyebrow">Bioinformatics &middot; Statistical Genomics</div>
-    <h1>Gabrielle <span class="accent">Altman</span></h1>
+    <h1>Gabrielle (Gaby) N. <span class="accent">Altman</span></h1>
     <p class="tagline">
-      Data scientist and PhD candidate working at biobank scale to find rare variants
-      that point toward therapeutic targets in neurodegenerative disease.
+      Data scientist and PhD candidate with expertise in biobank-scale statistical human genomics.
     </p>
     <div class="contact-line">
       <span>New York, NY</span>
@@ -383,7 +400,13 @@ footer {
       <span>·</span>
       <a href="https://github.com/gabrielle-altman" target="_blank" rel="noopener">GitHub</a>
     </div>
+    <div style="margin-top: 15px; margin-bottom: -25px;">
+      <a href="/GabyAltman_Resume_May2026.pdf" download class="resume-link">
+        📄 Download Resume (PDF)
+      </a>
+    </div>
   </header>
+
 
   <section class="about">
     <h2>About</h2>
@@ -391,7 +414,7 @@ footer {
       I am finishing my PhD in Genetics and Genomic Sciences at the Icahn School of Medicine
       at Mount Sinai (defending October&nbsp;2026). My research uncovers novel
       genotype-phenotype associations through large-scale analysis of tandem repeat expansions
-      across the UK Biobank and All of Us &mdash; over 350,000 genomes &mdash; integrating WGS,
+      across the UK Biobank and All of Us in over 350,000 genomes, integrating WGS,
       methylation, RNA-seq, and long-read data to characterize functional impact.
     </p>
     <p>
@@ -401,13 +424,47 @@ footer {
   </section>
 
   <section>
+    <h2>Skills</h2>
+    <div class="skills-grid">
+
+      <div class="skill-group">
+        <h4>Programming</h4>
+        <p>R (tidyverse, ggplot2), Python, Bash/Unix, MATLAB</p>
+      </div>
+
+      <div class="skill-group">
+        <h4>Statistical Genetics &amp; Data Science</h4>
+        <p>GWAS / PheWAS (REGENIE, PLINK, brglm), polygenic risk scores, fine mapping (CAVIAR),
+          conditional analysis, machine learning (scikit-learn, PyTorch)</p>
+      </div>
+
+      <div class="skill-group">
+        <h4>Cloud &amp; Scientific Computing</h4>
+        <p>Google Cloud Platform, AWS, Terra, DNAnexus, All of Us Researcher Workbench, Cavatica;
+          Docker, Git/GitHub, HPC (LSF)</p>
+      </div>
+
+      <div class="skill-group">
+        <h4>Genomics &amp; Bioinformatics</h4>
+        <p>Whole-genome sequencing, RNA-seq, methylation arrays, long-read sequencing, variant calling</p>
+      </div>
+
+      <div class="skill-group">
+        <h4>Molecular Biology</h4>
+        <p>PCR, gel electrophoresis, bisulfite conversion, combined bisulfite restriction analysis</p>
+      </div>
+
+    </div>
+  </section>
+
+  <section>
     <h2>Selected Research</h2>
 
     <div class="item">
       <div class="item-meta">
-        2020 &mdash; Present &nbsp;·&nbsp; <span class="org">Sharp Lab, ISMMS</span>
+        2020 &mdash; Present &nbsp;·&nbsp; <span class="org">Sharp Lab, Icahn School of Medicine at Mount Sinai</span>
       </div>
-      <h3>PhD Candidate &mdash; Tandem Repeat Expansions in Neurodegenerative Disease</h3>
+      <h3>PhD Candidate</h3>
       <div class="item-body">
         <ul>
           <li>Discovered 19 novel TR expansion loci associated with neurodegenerative disease by meta-analyzing &gt;350,000 samples across UK Biobank and All of Us using REGENIE with approximate Firth logistic regression.</li>
@@ -415,6 +472,19 @@ footer {
           <li>Integrated WGS SNP, methylation array, bulk RNA-seq, and long-read sequencing across AMP&nbsp;PD, GTEx, TOPMed, ADSP, and AoU to characterize the functional and clinical impact of TR expansions.</li>
           <li>Built containerized, reproducible cloud pipelines (Cavatica/AWS) to scale TR genotyping and <em>de novo</em> expansion calling for thousands of WGS trios in pediatric congenital disorders.</li>
           <li>Screened <em>LDLR</em> promoter hypermethylation in 308 mutation-negative familial hypercholesterolemia patients via Combined Bisulfite Restriction Analysis.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="item-meta">
+        2018 &mdash; 2020 &nbsp;·&nbsp; <span class="org">Brent &amp; Doering Labs, Washington University in St. Louis</span>
+      </div>
+      <h3>Undergraduate Researcher</h3>
+      <div class="item-body">
+        <ul>
+          <li>Analyzed Bulked Segregant Analysis genome sequences in R to identify natural genetic variants of <em>Cryptococcus neoformans</em> influencing virulence.</li>
+          <li>Developed novel R-based simulations of BSA experiments to optimize future cross designs.</li>
         </ul>
       </div>
     </div>
@@ -432,23 +502,27 @@ footer {
       </div>
     </div>
 
-    <div class="item">
-      <div class="item-meta">
-        2018 &mdash; 2020 &nbsp;·&nbsp; <span class="org">Brent &amp; Doering Labs, WashU</span>
-      </div>
-      <h3>Undergraduate Researcher &mdash; Cryptococcal Genetics</h3>
-      <div class="item-body">
-        <ul>
-          <li>Analyzed Bulked Segregant Analysis genome sequences in R to identify natural genetic variants of <em>Cryptococcus neoformans</em> influencing virulence.</li>
-          <li>Developed novel R-based simulations of BSA experiments to optimize future cross designs.</li>
-        </ul>
-      </div>
-    </div>
+
   </section>
 
   <section>
     <h2>Projects</h2>
     <div class="project-list">
+
+      <div class="project">
+        <h3>Wearable Post-Operative Monitor</h3>
+        <div class="project-tags">
+          <span class="tag">1st Place</span>
+          <span class="tag">Hardware</span>
+          <span class="tag">Software</span>
+        </div>
+        <p>
+          Senior capstone project at WashU Biomedical Engineering. Led software development
+          and circuitry for a wearable post-operative monitor; awarded 1st place out of 21
+          teams.
+        </p>
+        <a class="project-link" href="https://seniordesign2019.wixsite.com/website" target="_blank" rel="noopener">View project page</a>
+      </div>
 
       <div class="project">
         <h3>Splice Site Prediction with Deep Learning</h3>
@@ -462,9 +536,32 @@ footer {
           Compared six model architectures (Random Forest, CNN, uni- and bidirectional LSTMs,
           two CNN/BiLSTM hybrids) for donor and acceptor splice site classification on the HS3D
           dataset. Extracted first-layer CNN filter weights to surface candidate motifs;
-          downstream MEME/XSTREME analysis recovered known splice site signals.
+          downstream MEME/XSTREME analysis recovered known splice site signals. Built for the BDS 3002 Machine Learning for Biomedical Data Science final project at ISMMS.
+        </p>
+        <p>
+          Co-authors: Carina Seah and O'Jay Stewart
         </p>
         <a class="project-link" href="https://github.com/gabrielle-altman/ISMMS-BDS3002-final-project" target="_blank" rel="noopener">View on GitHub</a>
+      </div>
+
+      <div class="project">
+        <h3>Mammography Patch Classification with Ensemble Learning</h3>
+        <div class="project-tags">
+          <span class="tag">PyTorch</span>
+          <span class="tag">DenseNet121</span>
+          <span class="tag">Transfer Learning</span>
+          <span class="tag">Ensemble Methods</span>
+        </div>
+        <p>
+          Developed a 10-model soft-voting ensemble for classifying mammography image patches
+          into five categories (benign/malignant calcifications and masses, background). Used
+          two-stage transfer learning (freeze backbone → fine-tune full network) and
+          WeightedRandomSampler to handle severe class imbalance. Built during the BDS 3002 Machine Learning for Biomedical Data Science Hackathon at ISMMS.
+        </p>
+        <p>
+          Co-authors: Carina Seah and O'Jay Stewart
+        </p>
+        <a class="project-link" href="https://github.com/gabrielle-altman/mammography-ensemble" target="_blank" rel="noopener">View on GitHub</a>
       </div>
 
       <div class="project">
@@ -490,20 +587,6 @@ footer {
         <p>
           Implemented an eQTL association analysis for "smoking-QTLs" and performed variance
           partitioning on brain gene expression data. Rotation project in the Huckins Lab.
-        </p>
-      </div>
-
-      <div class="project">
-        <h3>Wearable Post-Operative Monitor</h3>
-        <div class="project-tags">
-          <span class="tag">Embedded</span>
-          <span class="tag">Hardware</span>
-          <span class="tag">1st Place</span>
-        </div>
-        <p>
-          Senior capstone project at WashU Biomedical Engineering. Led software development
-          and circuitry for a wearable post-operative monitor; awarded 1st place out of 21
-          teams.
         </p>
       </div>
 
@@ -557,49 +640,15 @@ footer {
   </section>
 
   <section>
-    <h2>Skills</h2>
-    <div class="skills-grid">
-
-      <div class="skill-group">
-        <h4>Programming</h4>
-        <p>R (tidyverse, ggplot2), Python, Bash/Unix, MATLAB</p>
-      </div>
-
-      <div class="skill-group">
-        <h4>Statistical Genetics &amp; Data Science</h4>
-        <p>GWAS / PheWAS (REGENIE, PLINK, brglm), polygenic risk scores, fine mapping (CAVIAR),
-          conditional analysis, machine learning (scikit-learn, PyTorch)</p>
-      </div>
-
-      <div class="skill-group">
-        <h4>Cloud &amp; Scientific Computing</h4>
-        <p>Google Cloud Platform, AWS, Terra, DNAnexus, All of Us Researcher Workbench, Cavatica;
-          Docker, Git/GitHub, HPC (LSF)</p>
-      </div>
-
-      <div class="skill-group">
-        <h4>Genomics &amp; Bioinformatics</h4>
-        <p>Whole-genome sequencing, RNA-seq, methylation arrays, long-read sequencing, variant calling</p>
-      </div>
-
-      <div class="skill-group">
-        <h4>Molecular Biology</h4>
-        <p>PCR, gel electrophoresis, bisulfite conversion, combined bisulfite restriction analysis</p>
-      </div>
-
-    </div>
-  </section>
-
-  <section>
     <h2>Education</h2>
 
     <div class="item">
       <div class="item-meta">
         2020 &mdash; 2026 &nbsp;·&nbsp; <span class="org">Icahn School of Medicine at Mount Sinai</span>
       </div>
-      <h3>PhD, Biomedical Sciences &mdash; Genetics &amp; Genomic Sciences</h3>
+      <h3>PhD, Biomedical Sciences &mdash; Genetics &amp; Genomic Sciences Multidisciplinary Training Area</h3>
       <div class="item-body">
-        <p style="font-size: 15px; margin-top: 4px;">Thesis defense: October 1, 2026.</p>
+        <p style="font-size: 15px; margin-top: 4px;">Thesis defense: October 1, 2026</p>
       </div>
     </div>
 
@@ -613,7 +662,74 @@ footer {
       </div>
     </div>
   </section>
+  <section>
+    <h2>Awards, Teaching &amp; Leadership</h2>
 
+    <div class="item">
+      <h3>Teaching Assistant</h3>
+      <div class="item-body">
+        <ul>
+          <li>Practical Applications of Personal Genomes (Icahn School of Medicine at Mount Sinai, 2023)</li>
+          <li>Biomedical Sciences (Icahn School of Medicine at Mount Sinai, 2021, 2022)</li>
+          <li>Physiological Control Systems (Washington University in St. Louis, 2019, 2020)</li>
+          <li>Computer Science I (Washington University in St. Louis, 2018)</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="item">
+      <h3>Select Honors</h3>
+      <div class="item-body">
+        <ul>
+          <li>1st Place in WashU BME Day design competition</li>
+          <li>Summa Cum Laude</li>
+          <li>Outstanding Senior &amp; Junior Awards for Academic Excellence in BME at WashU (2019, 2020)</li>
+          <li>Dean's List</li>
+          <li>Tau Beta Pi Engineering Honor Society</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="item">
+      <h3>Mentorship</h3>
+      <div class="item-body">
+        <ul>
+          <li>PhD Peer Mentor (Icahn School of Medicine at Mount Sinai, 2021–2024)</li>
+          <li>Mentored high schoolers in hands-on RNA-seq pipelines through the Center for Excellence in Youth Education (CEYE) at Icahn School of Medicine at Mount Sinai (2021)</li>
+        </ul>
+      </div>
+    </div>
+
+  </section>
+
+  <section>
+    <h2>Professional Development</h2>
+
+    <div class="item">
+      <div class="item-meta">
+        January 2022 &nbsp;·&nbsp; <span class="org">The Rockefeller University</span>
+      </div>
+      <h3>Advanced Gene Mapping Course</h3>
+      <div class="item-body">
+        <ul>
+          <li>Trained in end-to-end genomic discovery: from LMM-based association analysis (REGENIE) and data quality control to functional annotation, polygenic risk scores, and transcriptomic integration (TWAS)</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="item-meta">
+        July 2021 &nbsp;·&nbsp; <span class="org">The Jackson Laboratory (JAX)</span>
+      </div>
+      <h3>62nd Annual McKusick Short Course in Human and Mammalian Genetics and Genomics</h3>
+      <div class="item-body">
+        <ul>
+          <li>Completed an intensive two-week program covering advanced topics in mammalian genetics, high-throughput sequencing technologies, and statistical genomics</li>
+        </ul>
+      </div>
+    </div>
+
+  </section>
   <footer>
     &copy; 2026 Gabrielle Altman &nbsp;·&nbsp; Built with HTML &amp; CSS
   </footer>
