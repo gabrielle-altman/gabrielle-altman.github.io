@@ -1,1 +1,624 @@
-<h1>Test</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gabrielle Altman — Bioinformatics Data Scientist</title>
+<meta name="description" content="Bioinformatics data scientist and PhD candidate specializing in biobank-scale statistical human genomics, tandem repeat expansions, and multiomic integration.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #f7f4ee;
+  --bg-elev: #fdfbf6;
+  --ink: #1a2a2e;
+  --ink-soft: #4a5a5e;
+  --ink-muted: #7a8a8e;
+  --accent: #2d6a5f;
+  --accent-soft: #c9dcd6;
+  --rule: #d8d2c4;
+  --serif: 'Fraunces', Georgia, serif;
+  --sans: 'IBM Plex Sans', system-ui, sans-serif;
+  --mono: 'IBM Plex Mono', ui-monospace, monospace;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--sans);
+  font-size: 17px;
+  line-height: 1.65;
+  color: var(--ink);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Subtle paper texture using a layered radial gradient */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at top left, rgba(45, 106, 95, 0.04), transparent 50%),
+    radial-gradient(ellipse at bottom right, rgba(45, 106, 95, 0.03), transparent 50%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+  border-bottom: 1px solid var(--accent-soft);
+  transition: border-color 0.2s ease;
+}
+a:hover { border-bottom-color: var(--accent); }
+
+.container {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 0 32px;
+  position: relative;
+  z-index: 1;
+}
+
+/* Header */
+header {
+  padding: 96px 0 64px;
+  animation: fadeUp 0.8s ease both;
+}
+
+.eyebrow {
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.eyebrow::before {
+  content: '';
+  width: 32px;
+  height: 1px;
+  background: var(--accent);
+}
+
+h1 {
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: clamp(40px, 6vw, 60px);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  margin-bottom: 24px;
+  color: var(--ink);
+}
+
+h1 .accent {
+  font-style: italic;
+  font-weight: 400;
+  color: var(--accent);
+}
+
+.tagline {
+  font-size: 19px;
+  color: var(--ink-soft);
+  max-width: 600px;
+  margin-bottom: 32px;
+}
+
+.contact-line {
+  font-family: var(--mono);
+  font-size: 13px;
+  color: var(--ink-muted);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 20px;
+  align-items: center;
+}
+
+.contact-line a {
+  color: var(--ink-soft);
+  border-bottom-color: var(--rule);
+}
+
+.contact-line a:hover { color: var(--accent); border-bottom-color: var(--accent); }
+
+/* Sections */
+section {
+  padding: 56px 0;
+  border-top: 1px solid var(--rule);
+  animation: fadeUp 0.8s ease both;
+}
+
+section:nth-of-type(1) { animation-delay: 0.1s; }
+section:nth-of-type(2) { animation-delay: 0.15s; }
+section:nth-of-type(3) { animation-delay: 0.2s; }
+section:nth-of-type(4) { animation-delay: 0.25s; }
+section:nth-of-type(5) { animation-delay: 0.3s; }
+
+h2 {
+  font-family: var(--mono);
+  font-weight: 500;
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 28px;
+}
+
+h3 {
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+  margin-bottom: 8px;
+  color: var(--ink);
+}
+
+p { margin-bottom: 16px; color: var(--ink-soft); }
+p:last-child { margin-bottom: 0; }
+
+/* About */
+.about p {
+  font-size: 18px;
+  color: var(--ink);
+  line-height: 1.7;
+}
+
+/* Experience / project items */
+.item {
+  margin-bottom: 40px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 4px;
+}
+
+.item:last-child { margin-bottom: 0; }
+
+.item-meta {
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0.05em;
+  color: var(--ink-muted);
+  text-transform: uppercase;
+}
+
+.item-meta .org {
+  color: var(--accent);
+}
+
+.item-body { margin-top: 8px; }
+
+.item-body ul {
+  list-style: none;
+  margin-top: 8px;
+}
+
+.item-body li {
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 8px;
+  color: var(--ink-soft);
+  line-height: 1.6;
+}
+
+.item-body li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 11px;
+  width: 8px;
+  height: 1px;
+  background: var(--accent);
+}
+
+/* Projects grid */
+.project-list {
+  display: grid;
+  gap: 32px;
+}
+
+.project {
+  padding: 24px;
+  background: var(--bg-elev);
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+  transition: border-color 0.25s ease, transform 0.25s ease;
+}
+
+.project:hover {
+  border-color: var(--accent);
+  transform: translateY(-2px);
+}
+
+.project h3 { margin-bottom: 6px; }
+
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 12px 0 14px;
+}
+
+.tag {
+  font-family: var(--mono);
+  font-size: 11px;
+  padding: 3px 10px;
+  background: var(--accent-soft);
+  color: var(--accent);
+  border-radius: 100px;
+  letter-spacing: 0.04em;
+}
+
+.project-link {
+  font-family: var(--mono);
+  font-size: 13px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 8px;
+}
+
+.project-link::after {
+  content: '→';
+  transition: transform 0.2s ease;
+}
+
+.project-link:hover::after { transform: translateX(3px); }
+
+/* Skills */
+.skills-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+.skill-group h4 {
+  font-family: var(--mono);
+  font-weight: 500;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink);
+  margin-bottom: 8px;
+}
+
+.skill-group p {
+  font-size: 15px;
+  margin-bottom: 0;
+}
+
+/* Publications */
+.pub {
+  margin-bottom: 24px;
+  padding-bottom: 24px;
+  border-bottom: 1px dashed var(--rule);
+}
+
+.pub:last-child { border-bottom: none; padding-bottom: 0; margin-bottom: 0; }
+
+.pub-title {
+  font-family: var(--serif);
+  font-size: 17px;
+  line-height: 1.4;
+  color: var(--ink);
+  margin-bottom: 6px;
+}
+
+.pub-title em { color: var(--accent); }
+
+.pub-meta {
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--ink-muted);
+  letter-spacing: 0.03em;
+}
+
+.pub-meta .venue { color: var(--ink-soft); font-style: italic; }
+
+.pub-status {
+  display: inline-block;
+  font-family: var(--mono);
+  font-size: 10px;
+  padding: 2px 8px;
+  background: var(--accent-soft);
+  color: var(--accent);
+  border-radius: 3px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-left: 6px;
+  vertical-align: middle;
+}
+
+/* Footer */
+footer {
+  padding: 48px 0 64px;
+  border-top: 1px solid var(--rule);
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--ink-muted);
+  text-align: center;
+  letter-spacing: 0.05em;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 600px) {
+  .container { padding: 0 24px; }
+  header { padding: 64px 0 48px; }
+  section { padding: 40px 0; }
+  body { font-size: 16px; }
+  .tagline { font-size: 17px; }
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+
+  <header>
+    <div class="eyebrow">Bioinformatics &middot; Statistical Genomics</div>
+    <h1>Gabrielle <span class="accent">Altman</span></h1>
+    <p class="tagline">
+      Data scientist and PhD candidate working at biobank scale to find rare variants
+      that point toward therapeutic targets in neurodegenerative disease.
+    </p>
+    <div class="contact-line">
+      <span>New York, NY</span>
+      <span>·</span>
+      <a href="mailto:gabrielle.n.altman@gmail.com">gabrielle.n.altman@gmail.com</a>
+      <span>·</span>
+      <a href="https://www.linkedin.com/in/gabrielle-altman24" target="_blank" rel="noopener">LinkedIn</a>
+      <span>·</span>
+      <a href="https://github.com/gabrielle-altman" target="_blank" rel="noopener">GitHub</a>
+    </div>
+  </header>
+
+  <section class="about">
+    <h2>About</h2>
+    <p>
+      I am finishing my PhD in Genetics and Genomic Sciences at the Icahn School of Medicine
+      at Mount Sinai (defending October&nbsp;2026). My research uncovers novel
+      genotype-phenotype associations through large-scale analysis of tandem repeat expansions
+      across the UK Biobank and All of Us &mdash; over 350,000 genomes &mdash; integrating WGS,
+      methylation, RNA-seq, and long-read data to characterize functional impact.
+    </p>
+    <p>
+      I am looking for industry R&amp;D roles where statistical genomics expertise can drive
+      target discovery and human-genetics-driven therapeutic development.
+    </p>
+  </section>
+
+  <section>
+    <h2>Selected Research</h2>
+
+    <div class="item">
+      <div class="item-meta">
+        2020 &mdash; Present &nbsp;·&nbsp; <span class="org">Sharp Lab, ISMMS</span>
+      </div>
+      <h3>PhD Candidate &mdash; Tandem Repeat Expansions in Neurodegenerative Disease</h3>
+      <div class="item-body">
+        <ul>
+          <li>Discovered 19 novel TR expansion loci associated with neurodegenerative disease by meta-analyzing &gt;350,000 samples across UK Biobank and All of Us using REGENIE with approximate Firth logistic regression.</li>
+          <li>Genotyped &gt;77,000 TRs and identified expansions in &gt;100,000 All of Us samples, accounting for batch effects and cohort heterogeneity.</li>
+          <li>Integrated WGS SNP, methylation array, bulk RNA-seq, and long-read sequencing across AMP&nbsp;PD, GTEx, TOPMed, ADSP, and AoU to characterize the functional and clinical impact of TR expansions.</li>
+          <li>Built containerized, reproducible cloud pipelines (Cavatica/AWS) to scale TR genotyping and <em>de novo</em> expansion calling for thousands of WGS trios in pediatric congenital disorders.</li>
+          <li>Screened <em>LDLR</em> promoter hypermethylation in 308 mutation-negative familial hypercholesterolemia patients via Combined Bisulfite Restriction Analysis.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="item-meta">
+        Summer 2017 &nbsp;·&nbsp; <span class="org">Regeneron Pharmaceuticals</span>
+      </div>
+      <h3>R&amp;D Intern &mdash; Inflammatory and Immune Diseases</h3>
+      <div class="item-body">
+        <ul>
+          <li>Analyzed serum IgE levels via ELISA to evaluate <em>in vivo</em> mouse experiments on asthma, allergies, and SLE.</li>
+          <li>Led a software-validation study using Halo to measure microscopic skin thickness in murine psoriasis models, reducing subjectivity in prior methods.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="item-meta">
+        2018 &mdash; 2020 &nbsp;·&nbsp; <span class="org">Brent &amp; Doering Labs, WashU</span>
+      </div>
+      <h3>Undergraduate Researcher &mdash; Cryptococcal Genetics</h3>
+      <div class="item-body">
+        <ul>
+          <li>Analyzed Bulked Segregant Analysis genome sequences in R to identify natural genetic variants of <em>Cryptococcus neoformans</em> influencing virulence.</li>
+          <li>Developed novel R-based simulations of BSA experiments to optimize future cross designs.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Projects</h2>
+    <div class="project-list">
+
+      <div class="project">
+        <h3>Splice Site Prediction with Deep Learning</h3>
+        <div class="project-tags">
+          <span class="tag">PyTorch</span>
+          <span class="tag">CNN</span>
+          <span class="tag">BiLSTM</span>
+          <span class="tag">Genomics</span>
+        </div>
+        <p>
+          Compared six model architectures (Random Forest, CNN, uni- and bidirectional LSTMs,
+          two CNN/BiLSTM hybrids) for donor and acceptor splice site classification on the HS3D
+          dataset. Extracted first-layer CNN filter weights to surface candidate motifs;
+          downstream MEME/XSTREME analysis recovered known splice site signals.
+        </p>
+        <a class="project-link" href="https://github.com/gabrielle-altman/ISMMS-BDS3002-final-project" target="_blank" rel="noopener">View on GitHub</a>
+      </div>
+
+      <div class="project">
+        <h3>GEO2Appyter &mdash; Gene Expression Browser Extension</h3>
+        <div class="project-tags">
+          <span class="tag">JavaScript</span>
+          <span class="tag">RNA-seq</span>
+          <span class="tag">Bioinformatics</span>
+        </div>
+        <p>
+          Designed and built a Google Chrome extension connecting Gene Expression Omnibus
+          (GEO) pages to an automated bulk RNA-seq pipeline. Built during a rotation in the
+          Ma'ayan Lab at ISMMS.
+        </p>
+      </div>
+
+      <div class="project">
+        <h3>eQTL Analysis of Smoking-Associated Variants</h3>
+        <div class="project-tags">
+          <span class="tag">Statistical Genetics</span>
+          <span class="tag">eQTL</span>
+        </div>
+        <p>
+          Implemented an eQTL association analysis for "smoking-QTLs" and performed variance
+          partitioning on brain gene expression data. Rotation project in the Huckins Lab.
+        </p>
+      </div>
+
+      <div class="project">
+        <h3>Wearable Post-Operative Monitor</h3>
+        <div class="project-tags">
+          <span class="tag">Embedded</span>
+          <span class="tag">Hardware</span>
+          <span class="tag">1st Place</span>
+        </div>
+        <p>
+          Senior capstone project at WashU Biomedical Engineering. Led software development
+          and circuitry for a wearable post-operative monitor; awarded 1st place out of 21
+          teams.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <section>
+    <h2>Selected Publications</h2>
+
+    <div class="pub">
+      <p class="pub-title">
+        <strong>Altman, G.&nbsp;N.</strong>, Jadhav, B., Garg, P., Shadrina, M., Manigbas, C.&nbsp;A.,
+        Lee, W., Martin-Trujillo, A., &amp; Sharp, A.&nbsp;J. Pleiotropic tandem repeat expansions
+        in <em>DAPK1</em> are associated with neurodegenerative disorders.
+        <span class="pub-status">In prep</span>
+      </p>
+    </div>
+
+    <div class="pub">
+      <p class="pub-title">
+        <strong>Altman, G.&nbsp;N.</strong>, Martin-Trujillo, A., Hesson, L.&nbsp;B., Bell, D.&nbsp;A.,
+        Hooper, A.&nbsp;J., Sharp, A.&nbsp;J. Promoter methylation of <em>LDLR</em> is not a common
+        cause of familial hypercholesterolemia.
+        <span class="pub-status">In prep</span>
+      </p>
+    </div>
+
+    <div class="pub">
+      <p class="pub-title">
+        Manigbas, C.&nbsp;A., Jadhav, B., Garg, P., Shadrina, M., Lee, W., <strong>Altman, G.</strong>,
+        Martin-Trujillo, A., &amp; Sharp, A.&nbsp;J. (2024). A phenome-wide association study of
+        tandem repeat variation in 168,554 individuals from the UK Biobank.
+      </p>
+      <p class="pub-meta">
+        <span class="venue">Nature Communications</span> &nbsp;·&nbsp; 15(1), 10521 &nbsp;·&nbsp;
+        <a href="https://doi.org/10.1038/s41467-024-54678-0" target="_blank" rel="noopener">doi.org/10.1038/s41467-024-54678-0</a>
+      </p>
+    </div>
+
+    <div class="pub">
+      <p class="pub-title">
+        Jadhav, B., et al., including <strong>Altman, G.</strong>, &amp; Sharp, A.&nbsp;J. (2024).
+        A phenome-wide association study of methylated GC-rich repeats identifies a GCC repeat
+        expansion in <em>AFF3</em> associated with intellectual disability.
+      </p>
+      <p class="pub-meta">
+        <span class="venue">Nature Genetics</span> &nbsp;·&nbsp; 56(11), 2322&ndash;2332 &nbsp;·&nbsp;
+        <a href="https://doi.org/10.1038/s41588-024-01917-1" target="_blank" rel="noopener">doi.org/10.1038/s41588-024-01917-1</a>
+      </p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Skills</h2>
+    <div class="skills-grid">
+
+      <div class="skill-group">
+        <h4>Programming</h4>
+        <p>R (tidyverse, ggplot2), Python, Bash/Unix, MATLAB</p>
+      </div>
+
+      <div class="skill-group">
+        <h4>Statistical Genetics &amp; Data Science</h4>
+        <p>GWAS / PheWAS (REGENIE, PLINK, brglm), polygenic risk scores, fine mapping (CAVIAR),
+          conditional analysis, machine learning (scikit-learn, PyTorch)</p>
+      </div>
+
+      <div class="skill-group">
+        <h4>Cloud &amp; Scientific Computing</h4>
+        <p>Google Cloud Platform, AWS, Terra, DNAnexus, All of Us Researcher Workbench, Cavatica;
+          Docker, Git/GitHub, HPC (LSF)</p>
+      </div>
+
+      <div class="skill-group">
+        <h4>Genomics &amp; Bioinformatics</h4>
+        <p>Whole-genome sequencing, RNA-seq, methylation arrays, long-read sequencing, variant calling</p>
+      </div>
+
+      <div class="skill-group">
+        <h4>Molecular Biology</h4>
+        <p>PCR, gel electrophoresis, bisulfite conversion, combined bisulfite restriction analysis</p>
+      </div>
+
+    </div>
+  </section>
+
+  <section>
+    <h2>Education</h2>
+
+    <div class="item">
+      <div class="item-meta">
+        2020 &mdash; 2026 &nbsp;·&nbsp; <span class="org">Icahn School of Medicine at Mount Sinai</span>
+      </div>
+      <h3>PhD, Biomedical Sciences &mdash; Genetics &amp; Genomic Sciences</h3>
+      <div class="item-body">
+        <p style="font-size: 15px; margin-top: 4px;">Thesis defense: October 1, 2026.</p>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="item-meta">
+        2016 &mdash; 2020 &nbsp;·&nbsp; <span class="org">Washington University in St. Louis</span>
+      </div>
+      <h3>BS, Biomedical Engineering (Minor: Computer Science)</h3>
+      <div class="item-body">
+        <p style="font-size: 15px; margin-top: 4px;">Summa Cum Laude &nbsp;·&nbsp; GPA 3.98 / 4.00 &nbsp;·&nbsp; Tau Beta Pi</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2026 Gabrielle Altman &nbsp;·&nbsp; Built with HTML &amp; CSS
+  </footer>
+
+</div>
+
+</body>
+</html>
