@@ -337,25 +337,28 @@ p:last-child { margin-bottom: 0; }
   margin-left: 6px;
   vertical-align: middle;
 }
-.resume-link {
-  font-family: var(--mono);
-  font-size: 13px;
-  padding: 5px 5px;
-  background: var(--accent-soft);
-  color: var(--accent);
-  border: 1px solid var(--accent);
-  border-radius: 4px;
-  display: inline-block;
-  transition: all 0.2s ease;
-  border-bottom: 1px solid var(--accent);
-  margin-top: 16px;
-  margin-bottom: 0px;
+/* Section nav */
+.section-nav {
+  margin-top: 8px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 20px;
 }
 
-.resume-link:hover {
-  background: var(--accent);
-  color: var(--bg-elev);
+.section-nav a {
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  border-bottom-color: var(--rule);
 }
+
+.section-nav a:hover {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+}
+
 /* Footer */
 footer {
   padding: 48px 0 64px;
@@ -419,27 +422,31 @@ footer {
       <span>·</span>
       <a href="https://github.com/gabrielle-altman" target="_blank" rel="noopener">GitHub</a>
     </div>
-    <!-- <div style="margin-top: 15px; margin-bottom: -25px;">
-      <a href="/GabyAltman_Resume_June2026.pdf" download class="resume-link">
-        📄 Download Resume (PDF)
-      </a>
-    </div> -->
   </header>
 
 
-  <section class="about">
+  <section class="about" id="about">
     <h2>About</h2>
     <p>
       I am finishing my PhD in Genetics and Genomic Sciences at the Icahn School of Medicine
-      at Mount Sinai (defending October&nbsp;2026). My research uncovers novel
+      at Mount Sinai (defending October&nbsp;1, 2026). My research uncovers novel
       genotype-phenotype associations through large-scale analysis of tandem repeat expansions
-      across the UK Biobank and All of Us in over 350,000 genomes, integrating WGS,
+      across the UK Biobank and All of Us in over 320,000 genomes, integrating WGS,
       methylation, RNA-seq, and long-read data to characterize functional impact.
     </p>
     <p>
       I am looking for industry R&amp;D roles where statistical genomics expertise can drive
       target discovery and human-genetics-driven therapeutic development.
     </p>
+    <nav class="section-nav">
+      <a href="#about">About</a>
+      <a href="#research">Research</a>
+      <a href="#publications">Publications</a>
+      <a href="#projects">Projects</a>
+      <a href="#education">Education</a>
+      <a href="#awards">Awards, Teaching &amp; Leadership</a>
+      <a href="#professional-development">Professional Development</a>
+    </nav>
   </section>
 
   <section>
@@ -476,7 +483,7 @@ footer {
     </div>
   </section>
 
-  <section>
+  <section id="research">
     <h2>Selected Research</h2>
 
     <div class="item">
@@ -486,11 +493,13 @@ footer {
       <h3>PhD Candidate</h3>
       <div class="item-body">
         <ul>
-          <li>Discovered 19 novel TR expansion loci associated with neurodegenerative disease by meta-analyzing &gt;350,000 samples across UK Biobank and All of Us using REGENIE with approximate Firth logistic regression.</li>
-          <li>Genotyped &gt;77,000 TRs and identified expansions in &gt;100,000 All of Us samples, accounting for batch effects and cohort heterogeneity.</li>
+          <li>Discovered 3 candidate tandem repeat (TR) expansion loci associated with neurodegenerative disease via association meta-analysis across &sim;320,000 samples (UK Biobank, All of Us) using REGENIE and METAL (<em>DAPK1</em>, <em>ANK3</em>, <em>RPL14</em>; Altman et al., medRxiv 2026, under review).</li>
+          <li>Performed cis-eQTL analyses across 49 GTEx tissues, MESA, and AMP&nbsp;PD, identifying <em>RPL14</em> repeat length as a candidate regulator of gene expression across independent cohorts.</li>
+          <li>Engineered composite neurodegenerative phenotypes from EHR data to increase power for detecting pleiotropic loci and recover misclassified cases across overlapping diagnoses.</li>
+          <li>Genotyped &gt;77,000 TR loci in &gt;100,000 All of Us WGS samples; harmonized and quality-control filtered the resulting VCFs to remove batch effects and control for cross-ancestry heterogeneity.</li>
           <li>Integrated WGS SNP, methylation array, bulk RNA-seq, and long-read sequencing across AMP&nbsp;PD, GTEx, TOPMed, ADSP, and AoU to characterize the functional and clinical impact of TR expansions.</li>
           <li>Built containerized, reproducible cloud pipelines (Cavatica/AWS) to scale TR genotyping and <em>de novo</em> expansion calling for thousands of WGS trios in pediatric congenital disorders.</li>
-          <li>Screened <em>LDLR</em> promoter hypermethylation in 308 mutation-negative familial hypercholesterolemia patients via Combined Bisulfite Restriction Analysis.</li>
+          <li>Screened <em>LDLR</em> promoter hypermethylation in 308 mutation-negative familial hypercholesterolemia patients via Combined Bisulfite Restriction Analysis (manuscript under revision).</li>
         </ul>
       </div>
     </div>
@@ -524,7 +533,64 @@ footer {
 
   </section>
 
-  <section>
+  <section id="publications">
+    <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 28px;">
+      <h2 style="margin-bottom: 0;">Selected Publications</h2>
+      <a href="https://orcid.org/0000-0003-3556-1492" target="_blank" rel="noopener" class="orcid-button">
+        ORCID
+      </a>
+    </div>
+
+
+    <div class="pub">
+      <p class="pub-title">
+        <strong>Altman, G.&nbsp;N.</strong>, Jadhav, B., Garg, P., Shadrina, M., Manigbas, C.&nbsp;A.,
+        Lee, W., Kandoi, S., Martin-Trujillo, A., &amp; Sharp, A.&nbsp;J. (2026). Tandem repeat
+        expansions in <em>DAPK1</em>, <em>ANK3</em>, and <em>RPL14</em> are associated with
+        diverse neurodegenerative diseases.
+        <span class="pub-status">Under review</span>
+      </p>
+      <p class="pub-meta">
+        <span class="venue">medRxiv</span> &nbsp;·&nbsp;
+        <a href="https://doi.org/10.64898/2026.08.06.26358503" target="_blank" rel="noopener">doi.org/10.64898/2026.08.06.26358503</a>
+      </p>
+    </div>
+
+    <div class="pub">
+      <p class="pub-title">
+        <strong>Altman, G.&nbsp;N.</strong>, Martin-Trujillo, A., Hesson, L.&nbsp;B., Bell, D.&nbsp;A.,
+        Hooper, A.&nbsp;J., Sharp, A.&nbsp;J. Promoter methylation of <em>LDLR</em> is not a common
+        cause of familial hypercholesterolemia.
+        <span class="pub-status">Under revision</span>
+      </p>
+    </div>
+
+    <div class="pub">
+      <p class="pub-title">
+        Manigbas, C.&nbsp;A., Jadhav, B., Garg, P., Shadrina, M., Lee, W., <strong>Altman, G.</strong>,
+        Martin-Trujillo, A., &amp; Sharp, A.&nbsp;J. (2024). A phenome-wide association study of
+        tandem repeat variation in 168,554 individuals from the UK Biobank.
+      </p>
+      <p class="pub-meta">
+        <span class="venue">Nature Communications</span> &nbsp;·&nbsp; 15(1), 10521 &nbsp;·&nbsp;
+        <a href="https://doi.org/10.1038/s41467-024-54678-0" target="_blank" rel="noopener">doi.org/10.1038/s41467-024-54678-0</a>
+      </p>
+    </div>
+
+    <div class="pub">
+      <p class="pub-title">
+        Jadhav, B., et al., including <strong>Altman, G.</strong>, &amp; Sharp, A.&nbsp;J. (2024).
+        A phenome-wide association study of methylated GC-rich repeats identifies a GCC repeat
+        expansion in <em>AFF3</em> associated with intellectual disability.
+      </p>
+      <p class="pub-meta">
+        <span class="venue">Nature Genetics</span> &nbsp;·&nbsp; 56(11), 2322&ndash;2332 &nbsp;·&nbsp;
+        <a href="https://doi.org/10.1038/s41588-024-01917-1" target="_blank" rel="noopener">doi.org/10.1038/s41588-024-01917-1</a>
+      </p>
+    </div>
+  </section>
+
+  <section id="projects">
     <h2>Projects</h2>
     <div class="project-list">
 
@@ -612,59 +678,7 @@ footer {
     </div>
   </section>
 
-  <section>
-    <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 28px;">
-      <h2 style="margin-bottom: 0;">Selected Publications</h2>
-      <a href="https://orcid.org/0000-0003-3556-1492" target="_blank" rel="noopener" class="orcid-button">
-        ORCID
-      </a>
-    </div>
-
-
-    <div class="pub">
-      <p class="pub-title">
-        <strong>Altman, G.&nbsp;N.</strong>, Jadhav, B., Garg, P., Shadrina, M., Manigbas, C.&nbsp;A.,
-        Lee, W., Martin-Trujillo, A., &amp; Sharp, A.&nbsp;J. Pleiotropic tandem repeat expansions
-        in <em>DAPK1</em> are associated with neurodegenerative disorders.
-        <span class="pub-status">In prep</span>
-      </p>
-    </div>
-
-    <div class="pub">
-      <p class="pub-title">
-        <strong>Altman, G.&nbsp;N.</strong>, Martin-Trujillo, A., Hesson, L.&nbsp;B., Bell, D.&nbsp;A.,
-        Hooper, A.&nbsp;J., Sharp, A.&nbsp;J. Promoter methylation of <em>LDLR</em> is not a common
-        cause of familial hypercholesterolemia.
-        <span class="pub-status">Under revision</span>
-      </p>
-    </div>
-
-    <div class="pub">
-      <p class="pub-title">
-        Manigbas, C.&nbsp;A., Jadhav, B., Garg, P., Shadrina, M., Lee, W., <strong>Altman, G.</strong>,
-        Martin-Trujillo, A., &amp; Sharp, A.&nbsp;J. (2024). A phenome-wide association study of
-        tandem repeat variation in 168,554 individuals from the UK Biobank.
-      </p>
-      <p class="pub-meta">
-        <span class="venue">Nature Communications</span> &nbsp;·&nbsp; 15(1), 10521 &nbsp;·&nbsp;
-        <a href="https://doi.org/10.1038/s41467-024-54678-0" target="_blank" rel="noopener">doi.org/10.1038/s41467-024-54678-0</a>
-      </p>
-    </div>
-
-    <div class="pub">
-      <p class="pub-title">
-        Jadhav, B., et al., including <strong>Altman, G.</strong>, &amp; Sharp, A.&nbsp;J. (2024).
-        A phenome-wide association study of methylated GC-rich repeats identifies a GCC repeat
-        expansion in <em>AFF3</em> associated with intellectual disability.
-      </p>
-      <p class="pub-meta">
-        <span class="venue">Nature Genetics</span> &nbsp;·&nbsp; 56(11), 2322&ndash;2332 &nbsp;·&nbsp;
-        <a href="https://doi.org/10.1038/s41588-024-01917-1" target="_blank" rel="noopener">doi.org/10.1038/s41588-024-01917-1</a>
-      </p>
-    </div>
-  </section>
-
-  <section>
+  <section id="education">
     <h2>Education</h2>
 
     <div class="item">
@@ -674,6 +688,7 @@ footer {
       <h3>PhD, Biomedical Sciences &mdash; Genetics &amp; Genomic Sciences Multidisciplinary Training Area</h3>
       <div class="item-body">
         <p style="font-size: 15px; margin-top: 4px;">Thesis defense: October 1, 2026</p>
+        <p style="font-size: 15px; margin-top: 4px;">Dissertation: <span style="font-style: italic;">Tandem Repeat Expansions and Epigenetic Variation as Alternative Genetic Mechanisms in Human Disease</span></p>
       </div>
     </div>
 
@@ -687,7 +702,7 @@ footer {
       </div>
     </div>
   </section>
-  <section>
+  <section id="awards">
     <h2>Awards, Teaching &amp; Leadership</h2>
 
     <div class="item">
@@ -727,7 +742,7 @@ footer {
 
   </section>
 
-  <section>
+  <section id="professional-development">
     <h2>Professional Development</h2>
 
     <div class="item">
